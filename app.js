@@ -23,7 +23,7 @@ function buttonFlash(btn) {
   btn.classList.add("flash");
   setTimeout(function () {
     btn.classList.remove("flash");
-  }, 210);
+  }, 300);
 }
 
 resetButton.addEventListener("click", function () {
@@ -38,6 +38,9 @@ function buttonPress() {
   userSeq.push(this.classList[1]);
   buttonFlash(this);
   checkFunction(userSeq.length - 1);
+  const audioElement = document.getElementById("audio");
+  audioElement.currentTime = 0;
+  audioElement.play();
 }
 
 let btnsAll = document.querySelectorAll(".btn");
